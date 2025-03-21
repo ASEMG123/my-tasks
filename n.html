@@ -1,0 +1,559 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منظم المهام الذكي ✅</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .settings-icon {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #ffa500;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-icon {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      color: black;
+      text-align: center;
+      display: none;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: red;
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 2px solid #ff6f61;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.1);
+    }
+
+    .side-menu {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .side-menu button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .side-menu button:hover {
+      transform: scale(1.1);
+    }
+
+    .task-container {
+      margin-top: 20px;
+    }
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .high { background-color: #ffcccc; }
+    .medium { background-color: #fff3cd; }
+    .low { background-color: #d4edda; }
+
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      animation: fade-in-out 3s ease-in-out forwards;
+    }
+
+    @keyframes fade-in-out {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* إضافة تصميم للخيارات */
+    .option-box {
+      display: inline-block;
+      width: 45%;
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid #ff6f61;
+      border-radius: 10px;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .option-box:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* تصميم الجدول */
+    .grid-container {
+      display: grid;
+      margin-top: 20px;
+      gap: 5px;
+    }
+
+    .grid-cell {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 40px;
+      background-color: #ffffff;
+      transition: background-color 0.3s;
+    }
+
+    .grid-cell:focus {
+      background-color: #f0f8ff;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- أيقونة الإعدادات -->
+  <div class="settings-icon hidden" id="settingsIcon" onclick="toggleSettings()">⚙️</div>
+
+  <!-- أيقونة الصفحة الرئيسية -->
+  <div class="home-icon hidden" id="homeIcon" onclick="goToHome()">🏠</div>
+
+  <!-- نافذة تخصيص الألوان والتعديل على الاسم والعمر -->
+  <div class="popup" id="settingsPopup">
+    <span class="close-btn" onclick="toggleSettings()">✖</span>
+    <h3>الإعدادات 🛠️</h3>
+
+    <label>صورة البروفايل:</label>
+    <img id="profileImagePreview" src="https://via.placeholder.com/100" alt="صورة البروفايل" class="profile-image" onclick="document.getElementById('profileImageInput').click()" />
+    <input type="file" id="profileImageInput" accept="image/*" style="display: none;" onchange="updateProfileImage(event)" />
+
+    <label>لون الخلفية:</label>
+    <input type="color" id="bgColorPicker" onchange="changeColor('background', this.value)">
+    
+    <label>لون الأزرار:</label>
+    <input type="color" id="btnColorPicker" onchange="changeColor('button', this.value)">
+    
+    <label>لون النصوص:</label>
+    <input type="color" id="textColorPicker" onchange="changeColor('text', this.value)">
+
+    <h4>تعديل البيانات الشخصية</h4>
+    <label>اسمك:</label>
+    <input type="text" id="editName" placeholder="اسمك الجديد" />
+
+    <label>عمرك:</label>
+    <input type="number" id="editAge" placeholder="عمرك الجديد" />
+
+    <button onclick="updateUserInfo()">حفظ التعديلات</button>
+  </div>
+
+  <div class="container">
+    <h1>مرحبًا بك في منظم المهام الذكي ✅</h1>
+
+    <!-- واجهة تسجيل البيانات -->
+    <div id="registration">
+      <input type="text" id="name" placeholder="اسمك" />
+      <input type="number" id="age" placeholder="عمرك" />
+      <button id="nextButton" disabled>التالي</button>
+      <p id="errorMessage" style="color: red;"></p>
+    </div>
+
+    <!-- واجهة اختيار الخيار -->
+    <div id="optionSelection" class="hidden">
+      <img id="profileImageDisplay" src="https://via.placeholder.com/100" alt="صورة البروفايل" class="profile-image" />
+      <h2>مرحبًا <span id="userName"></span>! اختر ما تريد القيام به:</h2>
+      <div class="option-box" onclick="selectOption('tasks')">📋 إدارة المهام اليومية</div>
+      <div class="option-box" onclick="selectOption('grid')">📊 إنشاء جدول</div>
+    </div>
+
+    <!-- واجهة إدارة المهام -->
+    <div id="tasksSection" class="hidden">
+      <h2>مرحبًا <span id="userName"></span>! أضف مهامك هنا:</h2>
+      <input type="text" id="taskInput" placeholder="اكتب مهمتك هنا..." />
+      <button onclick="openPriorityPopup()">➕ إضافة المهمة</button>
+      <div class="task-container" id="taskContainer"></div>
+    </div>
+
+    <!-- واجهة إنشاء الجدول -->
+    <div id="gridSection" class="hidden">
+      <h2>إنشاء جدول 📊</h2>
+      <label>عدد الصفوف (1-30):</label>
+      <input type="number" id="rowsInput" min="1" max="30" value="1" />
+      
+      <label>عدد الأعمدة (1-30):</label>
+      <input type="number" id="colsInput" min="1" max="30" value="1" />
+      
+      <button onclick="createGrid()">إنشاء الجدول</button>
+      
+      <div class="grid-container" id="gridContainer"></div>
+    </div>
+
+    <!-- نافذة تحديد الأولوية -->
+    <div class="popup" id="priorityPopup">
+      <span class="close-btn" onclick="togglePopup(false)">✖</span>
+      <h3>حدد أولوية المهمة</h3>
+      <button onclick="addTask('high')">🔴 عالية</button>
+      <button onclick="addTask('medium')">🟠 متوسطة</button>
+      <button onclick="addTask('low')">🟢 منخفضة</button>
+    </div>
+  </div>
+
+  <!-- قائمة التصنيفات الجانبية -->
+  <div class="side-menu hidden" id="sideMenu">
+    <button onclick="showTasks('high')">🔴</button>
+    <button onclick="showTasks('medium')">🟠</button>
+    <button onclick="showTasks('low')">🟢</button>
+  </div>
+
+  <script>
+    let tasks = [];
+    let userName = "";
+    let userAge = 0;
+    let userProfileImage = "https://via.placeholder.com/100"; // صورة بروفايل افتراضية
+    let currentTaskText = "";
+
+    function toggleSettings() {
+      const settingsPopup = document.getElementById('settingsPopup');
+      settingsPopup.style.display = settingsPopup.style.display === "block" ? "none" : "block";
+
+      if (settingsPopup.style.display === "block") {
+        document.getElementById('editName').value = userName;
+        document.getElementById('editAge').value = userAge;
+        document.getElementById('profileImagePreview').src = userProfileImage;
+      }
+    }
+
+    function changeColor(type, color) {
+      if (type === "background") {
+        document.body.style.backgroundColor = color;
+      } else if (type === "button") {
+        document.querySelectorAll("button").forEach(btn => btn.style.backgroundColor = color);
+      } else if (type === "text") {
+        document.body.style.color = color;
+      }
+    }
+
+    function validateInputs() {
+      const nameInput = document.getElementById('name');
+      const ageInput = document.getElementById('age');
+      const nextButton = document.getElementById('nextButton');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      const name = nameInput.value.trim();
+      const age = parseInt(ageInput.value, 10);
+      if (!name || isNaN(age) || age < 5) {
+        errorMessage.textContent = "يرجى إدخال بيانات صحيحة!";
+        nextButton.disabled = true;
+      } else {
+        errorMessage.textContent = '';
+        nextButton.disabled = false;
+      }
+    }
+
+    document.getElementById('name').addEventListener('input', validateInputs);
+    document.getElementById('age').addEventListener('input', validateInputs);
+
+    document.getElementById('nextButton').addEventListener('click', () => {
+      userName = document.getElementById('name').value;
+      userAge = parseInt(document.getElementById('age').value, 10);
+      document.getElementById('userName').textContent = userName;
+      document.getElementById('profileImageDisplay').src = userProfileImage;
+
+      // إظهار أيقونة الصفحة الرئيسية وأيقونة الإعدادات وأزرار التصنيف بعد التسجيل
+      document.getElementById('settingsIcon').classList.remove('hidden');
+      document.getElementById('homeIcon').classList.remove('hidden');
+      document.getElementById('sideMenu').classList.remove('hidden');
+
+      document.getElementById('registration').classList.add('hidden');
+      document.getElementById('optionSelection').classList.remove('hidden');
+    });
+
+    function updateUserInfo() {
+      const newName = document.getElementById('editName').value.trim();
+      const newAge = parseInt(document.getElementById('editAge').value, 10);
+
+      if (newName && !isNaN(newAge) && newAge >= 5) {
+        userName = newName;
+        userAge = newAge;
+        document.getElementById('userName').textContent = userName;
+
+        // تحديث صورة البروفايل إذا كانت موجودة
+        const profileImageDisplay = document.getElementById('profileImageDisplay');
+        if (profileImageDisplay) {
+          profileImageDisplay.src = userProfileImage;
+        }
+
+        showNotification("تم تحديث البيانات بنجاح! 😊");
+        toggleSettings();
+      } else {
+        showNotification("يرجى إدخال بيانات صحيحة!", true);
+      }
+    }
+
+    function selectOption(option) {
+      if (option === 'tasks') {
+        document.getElementById('optionSelection').classList.add('hidden');
+        document.getElementById('tasksSection').classList.remove('hidden');
+      } else if (option === 'grid') {
+        document.getElementById('optionSelection').classList.add('hidden');
+        document.getElementById('gridSection').classList.remove('hidden');
+      }
+    }
+
+    function createGrid() {
+      const rows = parseInt(document.getElementById('rowsInput').value, 10);
+      const cols = parseInt(document.getElementById('colsInput').value, 10);
+
+      if (rows < 1 || rows > 30 || cols < 1 || cols > 30) {
+        showNotification("يرجى إدخال قيم بين 1 و 30!", true);
+        return;
+      }
+
+      const gridContainer = document.getElementById('gridContainer');
+      gridContainer.innerHTML = '';
+      gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+      gridContainer.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+      for (let i = 0; i < rows * cols; i++) {
+        const cell = document.createElement('div');
+        cell.contentEditable = true;
+        cell.className = 'grid-cell';
+        gridContainer.appendChild(cell);
+      }
+    }
+
+    function goToHome() {
+      // العودة إلى واجهة الخيارات الرئيسية
+      document.getElementById('tasksSection').classList.add('hidden');
+      document.getElementById('gridSection').classList.add('hidden');
+      document.getElementById('optionSelection').classList.remove('hidden');
+    }
+
+    function openPriorityPopup() {
+      currentTaskText = document.getElementById('taskInput').value.trim();
+      if (currentTaskText) {
+        document.getElementById('taskInput').value = "";
+        document.getElementById('priorityPopup').style.display = "block";
+      }
+    }
+
+    function addTask(priority) {
+      tasks.push({ text: currentTaskText, priority });
+      document.getElementById('priorityPopup').style.display = "none";
+      renderTasks();
+    }
+
+    function renderTasks(filter = "all") {
+      const taskContainer = document.getElementById('taskContainer');
+      taskContainer.innerHTML = '';
+      tasks.forEach(task => {
+        if (filter === "all" || task.priority === filter) {
+          const taskElement = document.createElement('div');
+          taskElement.className = `task ${task.priority}`;
+          taskElement.innerHTML = `
+            <span>${task.text}</span>
+            <div>
+              <button onclick="completeTask('${task.text}')">✔️</button>
+              <button onclick="deleteTask('${task.text}')">🗑️</button>
+            </div>`;
+          taskContainer.appendChild(taskElement);
+        }
+      });
+    }
+
+    function showTasks(filter) {
+      renderTasks(filter);
+    }
+
+    function completeTask(taskText) {
+      deleteTask(taskText);
+      const messages = [
+        "شاطر يا بطل! 🚀",
+        "مبروك خلصت مهمة! 🎉",
+        "يلا يا جامد، دي كانت سهلة عليك! 💪"
+      ];
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      showNotification(randomMessage);
+    }
+
+    function deleteTask(taskText) {
+      tasks = tasks.filter(task => task.text !== taskText);
+      renderTasks();
+      const messages = [
+        "كويس، عايزين بقا مهمة جديدة! 🆒",
+        "تم الحذف بنجاح! 😊",
+        "أحسنت، استمر هيك! 👌"
+      ];
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      showNotification(randomMessage);
+    }
+
+    function showNotification(message, isError = false) {
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      notification.style.backgroundColor = isError ? "#ff4d4d" : "rgba(0, 0, 0, 0.8)";
+      document.body.appendChild(notification);
+      setTimeout(() => notification.remove(), 3000);
+    }
+
+    function updateProfileImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          userProfileImage = e.target.result;
+
+          // تحديث الصورتين (في الإعدادات وفي واجهة الخيارات)
+          const profileImagePreview = document.getElementById('profileImagePreview');
+          const profileImageDisplay = document.getElementById('profileImageDisplay');
+
+          if (profileImagePreview) {
+            profileImagePreview.src = userProfileImage;
+          }
+          if (profileImageDisplay) {
+            profileImageDisplay.src = userProfileImage;
+          }
+
+          showNotification("تم تحديث صورة البروفايل بنجاح! 😊");
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
